@@ -72,7 +72,7 @@
                     <section class="login_content">
                         <!--<img class="login_logo" src="/images/logo.png">-->
                         <span class="title">
-                            Shocas
+                            Rent And Sale
                         </span>
 
                         <form method="POST" action="{{route('login')}}">
