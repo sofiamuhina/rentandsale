@@ -1,0 +1,501 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0",
+    "title": "leeloo",
+    "description": "TODO: Add Description",
+    "license": {
+      "name": "MIT",
+      "url": "http://github.com/gruntjs/grunt/blob/master/LICENSE-MIT"
+    }
+  },
+  "host": "example.com",
+  "basePath": "/api",
+  "securityDefinitions": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "implicit",
+      "authorizationUrl": "http://example.com/api",
+      "scopes": {}
+    }
+  },
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/user": {
+      "put": {
+        "description": "TODO: Add Description",
+        "summary": "updateSelf",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "updateSelf",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "parameters": [
+          {
+            "name": "lastname",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "auth": []
+          }
+        ],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "PUT",
+              "uri": "/user",
+              "headers": {
+                "Content-Type": "application/x-www-form-urlencoded",
+                "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImRiYzE0MzlhMzVlZDhhMDhkNzIyY2IzY2IzYTNlYmJiYjdlZGNhM2IyNTVmMjRlNzA5YWFiZDE0YjY3NDVkNTZmM2EzMjQzOTMyZTliMDNkIn0.eyJhdWQiOiIyIiwianRpIjoiZGJjMTQzOWEzNWVkOGEwOGQ3MjJjYjNjYjNhM2ViYmJiN2VkY2EzYjI1NWYyNGU3MDlhYWJkMTRiNjc0NWQ1NmYzYTMyNDM5MzJlOWIwM2QiLCJpYXQiOjE1MDQ0NzUyMjIsIm5iZiI6MTUwNDQ3NTIyMiwiZXhwIjoxNTM2MDExMjIyLCJzdWIiOiI0Iiwic2NvcGVzIjpbXX0.JITAm_2g32sSvRnbwzOj82ZlSz33-cWHlHfyUqn8yY7JWbgHoi3RjJJGn1bTOcVciMF9tMo9u-8V4fvje-pFfOQKKdBseT_wblntPlYFVKyySujh1_T7BsWGA-aUNb-AF41D4aFRg8eaClD0NPQ6dxRiOQc3id8S-buB1i-dBhR8yWsedegvS0azTlHZ7CVVohaUFTAlLubjlBGGuM67NtGiRZXc0wlqBcN7eKqRq3rG2RoewZ9Wc1Z4JyZtq478G9vYL-fiaaAeYTnAldJY92xMxO4pKotkHSibOfkJvYX26XJ3bH7hz9I_sMHTXfr-ObiyK5-_S1x7ykjfx2dvvPqpbpng1eBqcmOBpcp9eqnZfbtNJSufgIY67l7Rn45XOzmZboeiD5awzHxk5VmvCwrdWU5u2zGpRjanOSHDHO8tIJ6bH1uMcafUdS8tnqvYa_AlmCKuwSWmVqCS3UqFJ_fNfaBJ8znTS3wfRGPyG9gkpvGNc4Broa65v28XrJMsffBgCJn-LNyDdgGBCLQ-A3-x8I-6r1MqxPuUhz4GIaG-JtrTaqL5qHvQfcc25OAjlejHnlnyupJ9bX1m-NiIKubimqr_3K9nBqeMmz3OUQs7ThZ5GkXcJQNc5MtQ_lxBrZ0VGUs1jMXGi-5Nvhv4lOc7Y9frA7-4I-gChp16iPI"
+              },
+              "body": "lastname=Amart"
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "updateSelf",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      },
+      "post": {
+        "description": "TODO: Add Description",
+        "summary": "register",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "register",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "password",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "password_confirmation",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "firstname",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "lastname",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "patronymic",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "phone",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "avatar",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/self": {
+      "get": {
+        "description": "TODO: Add Description",
+        "summary": "getSelf",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "getSelf",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "auth": []
+          }
+        ],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "GET",
+              "uri": "/self",
+              "headers": {
+                "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImRiYzE0MzlhMzVlZDhhMDhkNzIyY2IzY2IzYTNlYmJiYjdlZGNhM2IyNTVmMjRlNzA5YWFiZDE0YjY3NDVkNTZmM2EzMjQzOTMyZTliMDNkIn0.eyJhdWQiOiIyIiwianRpIjoiZGJjMTQzOWEzNWVkOGEwOGQ3MjJjYjNjYjNhM2ViYmJiN2VkY2EzYjI1NWYyNGU3MDlhYWJkMTRiNjc0NWQ1NmYzYTMyNDM5MzJlOWIwM2QiLCJpYXQiOjE1MDQ0NzUyMjIsIm5iZiI6MTUwNDQ3NTIyMiwiZXhwIjoxNTM2MDExMjIyLCJzdWIiOiI0Iiwic2NvcGVzIjpbXX0.JITAm_2g32sSvRnbwzOj82ZlSz33-cWHlHfyUqn8yY7JWbgHoi3RjJJGn1bTOcVciMF9tMo9u-8V4fvje-pFfOQKKdBseT_wblntPlYFVKyySujh1_T7BsWGA-aUNb-AF41D4aFRg8eaClD0NPQ6dxRiOQc3id8S-buB1i-dBhR8yWsedegvS0azTlHZ7CVVohaUFTAlLubjlBGGuM67NtGiRZXc0wlqBcN7eKqRq3rG2RoewZ9Wc1Z4JyZtq478G9vYL-fiaaAeYTnAldJY92xMxO4pKotkHSibOfkJvYX26XJ3bH7hz9I_sMHTXfr-ObiyK5-_S1x7ykjfx2dvvPqpbpng1eBqcmOBpcp9eqnZfbtNJSufgIY67l7Rn45XOzmZboeiD5awzHxk5VmvCwrdWU5u2zGpRjanOSHDHO8tIJ6bH1uMcafUdS8tnqvYa_AlmCKuwSWmVqCS3UqFJ_fNfaBJ8znTS3wfRGPyG9gkpvGNc4Broa65v28XrJMsffBgCJn-LNyDdgGBCLQ-A3-x8I-6r1MqxPuUhz4GIaG-JtrTaqL5qHvQfcc25OAjlejHnlnyupJ9bX1m-NiIKubimqr_3K9nBqeMmz3OUQs7ThZ5GkXcJQNc5MtQ_lxBrZ0VGUs1jMXGi-5Nvhv4lOc7Y9frA7-4I-gChp16iPI"
+              }
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "getSelf",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/auth": {
+      "post": {
+        "description": "TODO: Add Description",
+        "summary": "apiAuth",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "apiAuth",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "password",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "POST",
+              "uri": "/auth",
+              "headers": {
+                "Content-Type": "application/x-www-form-urlencoded"
+              },
+              "body": "email=demo@appomart.com&password=Qwerty123"
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "apiAuth",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/refresh": {
+      "post": {
+        "description": "TODO: Add Description",
+        "summary": "apiRefresh",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "apiRefresh",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "parameters": [
+          {
+            "name": "refresh_token",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "POST",
+              "uri": "/refresh",
+              "headers": {
+                "Content-Type": "application/x-www-form-urlencoded"
+              },
+              "body": "refresh_token=def502000249b6be67d4f401a20e068fbccaaa953be327396ecf46d73246fb94ad443e85f24d29d96b73bfd046037c0e28c43b6f88e0a30773863ec55fd6267bc4ff3f90c26e3ff1ccabc00ba3ac43f67c82ff504d25178ea1a0a3542dedad0705dcfd48275efb6d519ef2ed8fcc61871c10ea2458152bdc77914d092762986f7e2f5162c82eb16cf2ee23cebb7ab967f4d2d81ac5d7fd3eedb1a880cf2741feef943dcf04bd295150ed29175af963bc53788f13f21b2e6ad756cbd36c898d3ec165b1868f5cb21cfe993e8c213a219158afd5857dbb43a1f1c0fa3a0c8270ba248b9ad4a704f2b296d2acf0f2ca8dc1dc080406064547b9cd127fc1944f3dac754526019e0e25edf94a14f68ce84cd0f12865352525e7fef69f12c3821e6e18d60c71efbbb4db800df6a0d6c53c722e76b00a16ebb626d529b4fe432aa65c29a60ebcca61ba61b5ab97a1dd42df94d91494ff3991c0d1afd268a6c7504d716abb"
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "apiRefresh",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/forgot_password": {
+      "post": {
+        "description": "TODO: Add Description",
+        "summary": "forgot_password",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "forgot_password",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "POST",
+              "uri": "/forgot_password",
+              "headers": {
+                "Content-Type": "application/x-www-form-urlencoded"
+              },
+              "body": "email=postman@gmg-spb.ru"
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "forgot_password",
+            "x-testDescription": "TODO: Add Description"
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/reset_password": {
+      "post": {
+        "description": "TODO: Add Description",
+        "summary": "reset_password",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "reset_password",
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "token",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "password",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "password_confirmation",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    }
+  }
+}
