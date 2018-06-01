@@ -8,7 +8,8 @@ use App\Models\Object;
 use App\Models\Owner;
 use App\Models\District;
 use App\Models\ObjectStatus;
-
+use App\Models\ObjectPhoto;
+use Illuminate\Support\Facades\Storage;
 
 
 class ObjectController extends Controller {
@@ -29,15 +30,11 @@ class ObjectController extends Controller {
         $object['district'] = $district['name'];
         $owner = Owner::where('id', '=', $object['owner_id'])->first();
         $object['owner'] = $owner['name'];
-        //$status = OrderStatus::get()->where('id', '=', $order['status_id'])->first();
-        //$order['status'] = $status['name'];
-        //$user = User::get()->where('id', '=', $order['user_id'])->first();
-        //$order['user'] = $user['name'];
-        //$retailer = Retailer::get()->where('id', '=', $order['retailer_id'])->first();
-        //$order['retailer'] = $retailer['name'];
-        //$statuses = OrderStatus::get();
+
+        $images = ObjectPhoto::where('object_id', '=', $id)->get();
+        //$image = '/images/' . $image['path'];
         
-        return view('objects.object', ['object' => $object, 'statuses' => $statuses, 'districts' => $districts, 'owners' => $owners]);
+        return view('objects.object', ['object' => $object, 'statuses' => $statuses, 'districts' => $districts, 'owners' => $owners, 'images' => $images]);
     }
 
     public function getList() {
@@ -73,6 +70,25 @@ class ObjectController extends Controller {
 
     public function create() {
         $object = Object::create($this->request->all());
+        $images[] = 0;
+            if ($this->request->image1) $images[1] = $this->request->image1;
+            if ($this->request->image2) $images[2] = $this->request->image2;
+            if ($this->request->image3) $images[3] = $this->request->image3;
+            
+            $count_images = count($images);
+            for ($n=1; $n<$count_images; $n++) {
+                $image = Storage::put('public/images', $images[$n]);
+                $image = mb_substr($image, 14, null, "UTF-8");
+                $photo = ObjectPhoto::create([
+                    'path' => $image,
+                    'object_id' => $object->id]); 
+            }
+            //$image1 = Storage::put('public/images', $this->request->image1);
+            //$image = mb_substr($image, 14, null, "UTF-8");
+            //$photo = ObjectPhoto::create([
+            //    'path' => $image,
+            //    'object_id' => $object->id]);
+            
         
         return redirect()->route('objectlist')
                 ->withErrors('Object has been created');

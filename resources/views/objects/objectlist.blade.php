@@ -115,6 +115,42 @@
                                         </div>
                                     </div>
                                     @endif
+                                    
+                                    <div class="col-md-12 col-sm-12 col-xs-12 col-lg-6 image-object-1" >
+                                        <div class="form-group">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                                                Image 1
+                                            </label>
+                                            <div class="col-md-9 col-sm-9 col-xs-12 has-feedback">
+                                                <input type="file" class="form-control" id="inputSuccess5" 
+                                                       name="image1">
+                                            </div>
+                                            
+                                        </div>   
+                                    <div class="form-group">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                                                Image 2
+                                            </label>
+                                            <div class="col-md-9 col-sm-9 col-xs-12 has-feedback">
+                                                <input type="file" class="form-control" id="inputSuccess5" 
+                                                       name="image2">
+                                            </div>
+                                            
+                                        </div>
+                                    <div class="form-group">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                                                Image 3
+                                            </label>
+                                            <div class="col-md-9 col-sm-9 col-xs-12 has-feedback">
+                                                <input type="file" class="form-control" id="inputSuccess5" 
+                                                       name="image3">
+                                            </div>
+                                            
+                                        </div>
+                                        
+                                    </div>
+                                    
+
 
                                     <div class="clearfix"></div>
                                     <br />

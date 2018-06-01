@@ -139,7 +139,29 @@
                         </select>  
                     </div>
             </div>
+            @if (!empty($images))
+            <div class="row">
+                <div class="col-md-20">
+                    <divjn class="x_panel">
+                        <div class="x_content">
+                            <div class="row">
+                                @foreach($images as $image)
+                                <div class="col-md-55">
+                                    <div class="image view view-first">
+                                        <a href="#" data-toggle="modal" data-target="#modal_{{$image->id}}">
+                                            <img style="width: 100%; display: block;" src="/images/{{$image->path}}" alt="image" />
+                                        </a>       
+                                    </div>
+                                </div> 
+                                @endforeach
 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @endif
+            
             <div class="ln_solid"></div>
             <div class="form-group">
                 <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
