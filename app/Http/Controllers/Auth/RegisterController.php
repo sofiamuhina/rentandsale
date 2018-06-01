@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Models\User;
-use App\Models\UserRole;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use App\Http\Request;
@@ -79,23 +78,20 @@ use RegistersUsers;
     }
 
     public function registerFromAdmin(Request $request) {
+        try {
+            $userData['name'] = $request->name;
+            $userData['email'] = $request->email;
+            $userData['password'] = $request->password;
+            $userData['phone'] = $request->phone;
+            $user = $this->create($userData);
         
-        $userData['name'] = $request->name;
-        $userData['email'] = $request->email;
-        $userData['password'] = $request->password;
-        $userData['phone'] = $request->phone;
-        $user = $this->create($userData);
-        
-        if (!empty($request->roles)) {  
-            $roles = $request->roles;
-            foreach ($roles as $role) {
-                $user_role = new UserRole;
-                $user_role->role_id = $role;
-                $user_role->user_id = $user['id'];
-                $user_role->save();
-            }
+        } catch (\Exception $ex) {
+            return redirect()->route('userlist')->withErrors('Данные не корректны');
         }
+        
+        
         return redirect()->route('userlist');
+
     }
 
     /**
